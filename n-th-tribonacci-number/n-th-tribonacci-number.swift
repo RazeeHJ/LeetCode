@@ -1,5 +1,3 @@
-//
-// Tn = Tn-3 + Tn-2 + Tn-1 
 class Solution {
     func tribonacci(_ n: Int) -> Int {
         if n == 0 {
