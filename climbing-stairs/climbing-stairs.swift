@@ -1,19 +1,19 @@
 class Solution {
     func climbStairs(_ n: Int) -> Int {
+        var result = [Int](repeating: 0, count: n+1)
         if n == 1 {
             return 1
         }
-        
         if n == 2 {
             return 2
         }
-        var arr = [Int](repeating: 0, count: n+1)    
-        arr[1] = 1
-        arr[2] = 2
-        for i in 3...n {
-            arr[i] = arr[i-1] + arr[i-2]
+        result[0] = 1
+        result[1] = 2
+        
+        for i in 2..<n {
+            result[i] = result[i-2] + result[i-1]
         }
         
-        return arr[n]
+        return result[n-1]
     }
 }
