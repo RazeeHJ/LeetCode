@@ -1,13 +1,15 @@
 class Solution {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-        var dict : [Int:Int] = [:]
-
-        for i in 0..<nums.count {
-            var expected = target - nums[i]
-            if let indx = dict[expected] {
-                return [indx, i]
-            }
-            dict[nums[i]] = i
+        var dict: [Int:Int] = [:]
+        
+        for (index, value) in nums.enumerated() {
+            var expected = target - nums[index]
+            
+            if let dictIndx = dict[expected] {
+                return [dictIndx, index]
+            }    
+            
+            dict[value] = index
         }
         
         return []
